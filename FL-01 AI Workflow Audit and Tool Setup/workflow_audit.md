@@ -24,8 +24,15 @@
 3. **Data preprocessing and Exploratory Data Analysis (EDA)**
    - *What "done well" means:* The generated code successfully cleans the target dataset and outputs clear, interpretable visualizations of the data distribution and missing values.
 
-## To-Do List (Action Items for Michael):
-- [ ] Create free accounts for Claude, ChatGPT, and Anthropic Academy.
-- [ ] Enroll in "AI Fluency: Framework & Foundations" and complete module 1.
-- [ ] Create a Claude Project with custom instructions (Wait for FL-2 to get the Proof Statement).
-- [ ] Take screenshots of the Claude Project and Academy enrollment to attach to your thread submission.
+## 3. Tool Setup Evidence
+
+Here are the screenshots providing evidence of tool setup and enrollment:
+
+**ChatGPT Setup:**
+![ChatGPT Setup](./ChatGPT.png)
+
+**Claude Setup:**
+![Claude Setup](./Claude.png)
+
+**Anthropic Academy Enrollment:**
+![Anthropic Academy Enrollment](./Kelas%20AI%20Fluency%20Framework%20&%20Foundations.png)

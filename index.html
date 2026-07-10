@@ -4,29 +4,419 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Michael Angello | AI & ML Engineer</title>
-    <!-- Tailwind CDN for the empty but live proof -->
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- GSAP for animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <!-- Vanilla Tilt for 3D card -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto+Mono&display=swap');
-        body { 
-            background-color: #0A192F; 
-            color: #CCD6F6; 
-            font-family: 'Roboto Mono', monospace; 
+        
+        :root {
+            --bg-color: #0A192F;
+            --accent: #64FFDA;
+            --text-main: #CCD6F6;
         }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Roboto Mono', monospace;
+            overflow: hidden; /* Hide scrollbars for the 1-page hero */
+            cursor: none; /* Hide default cursor for custom cursor */
+        }
+
         h1, h2 { font-family: 'Inter', sans-serif; }
-        .accent { color: #64FFDA; }
+        .accent { color: var(--accent); }
+
+        /* Custom Cursor */
+        .cursor-follower {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 20px;
+            height: 20px;
+            background-color: rgba(100, 255, 218, 0.5);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+            transition: width 0.2s, height 0.2s, background-color 0.2s;
+            mix-blend-mode: screen;
+        }
+        .cursor-follower.hover {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(100, 255, 218, 0.1);
+            border: 1px solid var(--accent);
+            backdrop-filter: blur(2px);
+        }
+
+        /* Animated Gradient Background */
+        .bg-animated {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(45deg, #0A192F, #112240, #0A192F, #020c1b);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            z-index: -4;
+        }
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Blobs */
+        .blob {
+            position: absolute;
+            filter: blur(90px);
+            border-radius: 50%;
+            opacity: 0.3;
+            z-index: -3;
+            animation: float 12s ease-in-out infinite alternate;
+        }
+        .blob-1 { top: 5%; left: 15%; width: 500px; height: 500px; background: rgba(100,255,218,0.25); animation-delay: 0s; }
+        .blob-2 { bottom: 5%; right: 15%; width: 600px; height: 600px; background: rgba(17,34,64,0.9); animation-delay: -5s; }
+
+        @keyframes float {
+            0% { transform: translateY(0px) scale(1); }
+            100% { transform: translateY(-60px) scale(1.1); }
+        }
+
+        /* Noise Overlay */
+        .noise {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)"/%3E%3C/svg%3E');
+            opacity: 0.04;
+            pointer-events: none;
+            z-index: -2;
+        }
+
+        /* Spotlight */
+        .spotlight {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            pointer-events: none;
+            background: radial-gradient(circle 600px at var(--x) var(--y), rgba(100, 255, 218, 0.06), transparent 80%);
+            z-index: -1;
+        }
+
+        /* Particles canvas */
+        #particles {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Glassmorphism Card */
+        .glass-card {
+            background: rgba(17, 34, 64, 0.4);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            border-radius: 24px;
+            z-index: 10;
+            transform-style: preserve-3d;
+        }
+
+        /* Hover Glow & Magnetic Button */
+        .magnetic-btn {
+            display: inline-block;
+            padding: 14px 36px;
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            border-radius: 8px;
+            font-family: 'Roboto Mono', monospace;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: color 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            background: transparent;
+        }
+        .magnetic-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%; left: 50%;
+            width: 300px; height: 300px;
+            background: var(--accent);
+            border-radius: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+            z-index: -1;
+        }
+        .magnetic-btn:hover {
+            color: var(--bg-color);
+            box-shadow: 0 0 25px rgba(100, 255, 218, 0.5);
+        }
+        .magnetic-btn:hover::before {
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        /* Text Reveal Base */
+        .reveal-text {
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        }
+        .reveal-inner {
+            display: inline-block;
+            transform: translateY(110%);
+        }
+        
+        /* Floating Objects */
+        .floating-obj {
+            position: absolute;
+            font-size: 2.5rem;
+            color: rgba(100, 255, 218, 0.15);
+            pointer-events: none;
+            z-index: 2;
+            font-weight: bold;
+        }
     </style>
 </head>
-<body class="flex items-center justify-center h-screen text-center p-6">
-    <div>
-        <h1 class="text-6xl font-bold mb-4 accent">&lt; MA /&gt;</h1>
-        <h2 class="text-3xl font-bold mb-6">Michael Angello</h2>
-        <p class="text-lg max-w-xl mx-auto leading-relaxed">
-            I can architect, train, and deploy production-ready Artificial Intelligence and Federated Learning systems.
-        </p>
-        <div class="mt-12 opacity-50 text-sm">
-            <p>Portfolio under construction.</p>
+<body>
+
+    <!-- Background Layers -->
+    <div class="bg-animated"></div>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="noise"></div>
+    <canvas id="particles"></canvas>
+    <div class="spotlight" id="spotlight" style="--x: 50%; --y: 50%;"></div>
+
+    <!-- Floating Objects for Mouse Parallax -->
+    <div class="floating-obj" style="top: 20%; left: 15%; animation: float 8s infinite alternate;" data-speed="-2.5">&lt;/&gt;</div>
+    <div class="floating-obj" style="bottom: 25%; right: 15%; animation: float 12s infinite alternate;" data-speed="3">{}</div>
+    <div class="floating-obj" style="top: 30%; right: 25%; animation: float 10s infinite alternate;" data-speed="-1.5">()</div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-follower" id="cursor"></div>
+
+    <!-- Main Content Container -->
+    <main class="relative w-full h-full flex items-center justify-center p-6">
+        
+        <!-- 3D Glassmorphism Card with Vanilla Tilt -->
+        <div class="glass-card p-12 md:p-16 max-w-4xl text-center" id="tilt-card" data-tilt data-tilt-max="7" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.15">
+            
+            <!-- This div pops out slightly in 3D space -->
+            <div style="transform: translateZ(60px);">
+                
+                <div class="reveal-text mb-6">
+                    <h1 class="reveal-inner text-6xl md:text-8xl font-bold accent tracking-tighter interactive">&lt; MA /&gt;</h1>
+                </div>
+                
+                <div class="reveal-text mb-6">
+                    <h2 class="reveal-inner text-3xl md:text-5xl font-bold text-white interactive">Michael Angello</h2>
+                </div>
+                
+                <div class="reveal-text mb-10">
+                    <p class="reveal-inner text-lg md:text-xl max-w-2xl mx-auto leading-relaxed text-gray-300">
+                        I can architect, train, and deploy production-ready Artificial Intelligence and Federated Learning systems.
+                    </p>
+                </div>
+
+                <div class="reveal-text mt-8">
+                    <div class="reveal-inner">
+                        <button class="magnetic-btn interactive" id="magnetic-btn">
+                            Initialize Portfolio
+                        </button>
+                    </div>
+                </div>
+                
+            </div>
         </div>
-    </div>
+    </main>
+
+    <script>
+        // --- 1. Cursor Follower & Spotlight ---
+        const cursor = document.getElementById('cursor');
+        const spotlight = document.getElementById('spotlight');
+        const interactives = document.querySelectorAll('.interactive');
+
+        let mouseX = window.innerWidth / 2;
+        let mouseY = window.innerHeight / 2;
+        let cursorX = mouseX;
+        let cursorY = mouseY;
+
+        window.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            // Update Spotlight
+            spotlight.style.setProperty('--x', `${mouseX}px`);
+            spotlight.style.setProperty('--y', `${mouseY}px`);
+        });
+
+        // Smooth cursor rendering loop
+        function renderCursor() {
+            cursorX += (mouseX - cursorX) * 0.15;
+            cursorY += (mouseY - cursorY) * 0.15;
+            cursor.style.transform = `translate(${cursorX}px, ${cursorY}px)`;
+            requestAnimationFrame(renderCursor);
+        }
+        renderCursor();
+
+        // Cursor hover states for interactive elements
+        interactives.forEach(el => {
+            el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+            el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+        });
+
+        // --- 2. Magnetic Button Logic ---
+        const magBtn = document.getElementById('magnetic-btn');
+        magBtn.addEventListener('mousemove', (e) => {
+            const rect = magBtn.getBoundingClientRect();
+            const h = rect.width / 2;
+            const w = rect.height / 2;
+            const x = e.clientX - rect.left - h;
+            const y = e.clientY - rect.top - w;
+            
+            // Move button slightly towards mouse
+            gsap.to(magBtn, {
+                x: x * 0.3,
+                y: y * 0.3,
+                duration: 0.3,
+                ease: "power2.out"
+            });
+        });
+        magBtn.addEventListener('mouseleave', () => {
+            // Snap back
+            gsap.to(magBtn, { x: 0, y: 0, duration: 0.7, ease: "elastic.out(1, 0.3)" });
+        });
+
+        // --- 3. Hero Intro & Text Reveal Animation ---
+        gsap.to('.reveal-inner', {
+            y: "0%",
+            duration: 1.2,
+            stagger: 0.15,
+            ease: "power4.out",
+            delay: 0.6
+        });
+        
+        gsap.from('.glass-card', {
+            scale: 0.85,
+            opacity: 0,
+            y: 30,
+            duration: 1.5,
+            ease: "power3.out",
+            delay: 0.2
+        });
+
+        // --- 4. Mouse Parallax for Floating Objects ---
+        const floatingObjs = document.querySelectorAll('.floating-obj');
+        window.addEventListener('mousemove', (e) => {
+            const x = (e.clientX - window.innerWidth / 2) * 0.01;
+            const y = (e.clientY - window.innerHeight / 2) * 0.01;
+            
+            floatingObjs.forEach(obj => {
+                const speed = obj.getAttribute('data-speed');
+                gsap.to(obj, {
+                    x: x * speed * 15,
+                    y: y * speed * 15,
+                    duration: 1.5,
+                    ease: "power2.out"
+                });
+            });
+        });
+
+        // --- 5. Interactive Particle Background ---
+        const canvas = document.getElementById('particles');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        let particlesArray = [];
+        const numberOfParticles = 70; // Kept reasonable for performance
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2 + 0.5;
+                this.speedX = Math.random() * 1 - 0.5;
+                this.speedY = Math.random() * 1 - 0.5;
+                this.density = (Math.random() * 30) + 1;
+            }
+            draw() {
+                ctx.fillStyle = 'rgba(100, 255, 218, 0.4)';
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.closePath();
+                ctx.fill();
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+
+                // Bounce off edges
+                if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
+                if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+
+                // Mouse repel interaction
+                let dx = mouseX - this.x;
+                let dy = mouseY - this.y;
+                let distance = Math.sqrt(dx * dx + dy * dy);
+                let forceDirectionX = dx / distance;
+                let forceDirectionY = dy / distance;
+                let maxDistance = 180;
+                let force = (maxDistance - distance) / maxDistance;
+                let directionX = forceDirectionX * force * this.density;
+                let directionY = forceDirectionY * force * this.density;
+
+                if (distance < maxDistance) {
+                    this.x -= directionX;
+                    this.y -= directionY;
+                }
+            }
+        }
+
+        function initParticles() {
+            particlesArray = [];
+            for (let i = 0; i < numberOfParticles; i++) {
+                particlesArray.push(new Particle());
+            }
+        }
+        initParticles();
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let i = 0; i < particlesArray.length; i++) {
+                particlesArray[i].update();
+                particlesArray[i].draw();
+                
+                // Draw connecting constellation lines
+                for (let j = i; j < particlesArray.length; j++) {
+                    let dx = particlesArray[i].x - particlesArray[j].x;
+                    let dy = particlesArray[i].y - particlesArray[j].y;
+                    let distance = Math.sqrt(dx * dx + dy * dy);
+                    if (distance < 120) {
+                        ctx.beginPath();
+                        ctx.strokeStyle = `rgba(100, 255, 218, ${0.15 - distance/800})`;
+                        ctx.lineWidth = 1;
+                        ctx.moveTo(particlesArray[i].x, particlesArray[i].y);
+                        ctx.lineTo(particlesArray[j].x, particlesArray[j].y);
+                        ctx.stroke();
+                        ctx.closePath();
+                    }
+                }
+            }
+            requestAnimationFrame(animateParticles);
+        }
+        animateParticles();
+
+        // Handle resize
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            initParticles();
+        });
+    </script>
 </body>
 </html>

@@ -45,6 +45,5 @@ Act as my portfolio tutor and editor. My proof statement is: "I can architect, t
 
 ## 4. Evidence
 Here are the local screenshots for the sitemap sketch and Claude setup:
-![Screenshot 1](./Cuplikan%20layar%202026-07-10%20223518.png)
-![Screenshot 2](./Cuplikan%20layar%202026-07-10%20223650.png)
-![Screenshot 3](./Cuplikan%20layar%202026-07-10%20223719.png)
+<img width="585" alt="Cuplikan layar 2026-07-10 223650" src="https://github.com/user-attachments/assets/447c8b15-8d3f-48ea-83bf-9774a2d16e4f" />
+<img width="585" height="961" alt="Cuplikan layar 2026-07-10 223719" src="https://github.com/user-attachments/assets/4d44e634-8f64-4973-be5c-0726f871bc52" />

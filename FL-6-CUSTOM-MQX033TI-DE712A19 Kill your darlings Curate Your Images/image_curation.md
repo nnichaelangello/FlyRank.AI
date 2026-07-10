@@ -3,7 +3,8 @@
 ## 1. Real Captures over AI
 I chose to use **real captures** for all my core project work (CCTV Tracking code, AKSARA UI, PRISMA dashboard) because AI cannot accurately replicate my actual system architecture. I also chose to use a **real professional photo** of myself for the Bio section to build genuine trust with Tech Recruiters.
 
-*(Note for Michael: Please place your real screenshots and photo in this folder).*
+**My Real Project / Profile Capture:**
+![Real Capture](./Cuplikan%20layar%202026-07-10%20230616.png)
 
 ## 2. AI-Generated Connective Tissue
 For the background texture of my Hero section, I used AI to generate a consistent mood that matches my Identity Kit (Deep Navy & Electric Cyan).

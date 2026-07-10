@@ -42,3 +42,9 @@ Act as my portfolio tutor and editor. My proof statement is: "I can architect, t
 > 4. Contact (Email CTA)
 > 
 > Pressure-test this sitemap against my proof statement and my one action (getting tech leads to email me for an interview). Is there any fluff here? Is there friction preventing them from taking action? Tell me one thing I should change to make it tighter.
+
+## 4. Evidence
+Here are the local screenshots for the sitemap sketch and Claude setup:
+![Screenshot 1](./Cuplikan%20layar%202026-07-10%20223518.png)
+![Screenshot 2](./Cuplikan%20layar%202026-07-10%20223650.png)
+![Screenshot 3](./Cuplikan%20layar%202026-07-10%20223719.png)

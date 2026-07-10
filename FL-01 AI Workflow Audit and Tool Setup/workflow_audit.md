@@ -29,10 +29,10 @@
 Here are the screenshots providing evidence of tool setup and enrollment:
 
 **ChatGPT Setup:**
-![ChatGPT Setup](./ChatGPT.png)
+<img width="1911" height="1198" alt="ChatGPT" src="https://github.com/user-attachments/assets/0466dab3-1c12-4175-873b-c525b6073701" />
 
 **Claude Setup:**
-![Claude Setup](./Claude.png)
+<img width="1912" height="1197" alt="Claude" src="https://github.com/user-attachments/assets/23fdd297-e275-4d47-8645-0c0dd4d8c582" />
 
 **Anthropic Academy Enrollment:**
-![Anthropic Academy Enrollment](./Kelas%20AI%20Fluency%20Framework%20&%20Foundations.png)
+<img width="1912" height="1195" alt="Kelas AI Fluency Framework   Foundations" src="https://github.com/user-attachments/assets/18040c04-1444-48d7-9668-d5c7da7d7c5b" />

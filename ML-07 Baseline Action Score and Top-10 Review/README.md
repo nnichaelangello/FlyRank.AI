@@ -1,27 +1,27 @@
 # ML-07: Baseline Action Score and Top-10 Review
 
-## Apa yang Kita Lakukan?
-Pada tugas ini (Fokus: *Core Lane 2 - Content Refresh Opportunity*), kita membangun sebuah model dasar (*Baseline*) berupa **aturan manual berbasis logika manusia** untuk mendeteksi halaman website yang performanya sedang menurun.
+## What We Did
+In this task (Focus: *Core Lane 2 - Content Refresh Opportunity*), we built a **transparent, human-readable baseline rule** to detect web pages that are experiencing a decline in performance.
 
-Langkah-langkah yang dilakukan:
-1. **Audit Sinyal (EDA):** Menguji hipotesis dua sinyal utama terhadap peluang turunnya *traffic* (`trend_direction == 'down'`).
-2. **Menyusun Aturan Baseline:** Membuat sebuah formula skoring manual tanpa *Machine Learning*.
-3. **Membangun Antrean (Ranked Queue):** Menyortir halaman dari prioritas tertinggi ke terendah dan menyimpannya ke dalam file CSV (`work/outputs/baseline_action_score.csv`).
+The steps taken were:
+1. **Signal Audit (EDA):** We tested two main signals against the proxy label for traffic decline (`trend_direction == 'down'`).
+2. **Building the Baseline Rule:** We created a manual scoring formula without using Machine Learning.
+3. **Building the Ranked Queue:** We sorted the pages from highest to lowest priority and saved them into a CSV file (`work/outputs/baseline_action_score.csv`).
 
-## Aturan Baseline yang Digunakan
-Aturan manual yang kita ciptakan adalah:
-> "Tandai halaman untuk di-review jika usianya sudah kusam (**>180 hari sejak update terakhir**), secara historis masih punya visibilitas pencarian (**>500 impresi dalam 90 hari**), namun interaksi/kliknya sangat buruk (**CTR < 2.0%**)."
+## The Baseline Rule
+The manual rule we created is:
+> "Flag a page for review if it is stale (**>180 days since the last update**), historically still has search visibility (**>500 impressions in the last 90 days**), but suffers from very poor engagement (**CTR < 2.0%**)."
 
-Untuk halaman yang memenuhi ketiga syarat mutlak di atas, skornya akan dikalikan dengan total impresinya (`impressions_90d`) agar halaman dengan potensi *traffic* terbesar berada di peringkat pertama. 
+For pages that meet all three conditions, their score is multiplied by their total impressions (`impressions_90d`) so that pages with the biggest traffic potential are ranked first.
 
-Halaman yang tertangkap akan diberi:
+Flagged pages are assigned:
 * **Action Label:** `review_for_refresh`
 * **Reason Code:** `stale_high_volume_low_ctr`
 
-## Hasilnya Seperti Apa?
-Hasil dari *Baseline Rule* ini sangat memuaskan:
-* Dari sekitar 30.000 baris data, aturan manual ini berhasil menyeleksi dan menyaring tepat **17 halaman paling kritis** yang butuh *refresh* konten.
-* **Akurasi Tinggi (Precision):** Dari 17 halaman yang ditandai oleh aturan kita, **16 halaman di antaranya memang terbukti sedang anjlok *traffic*-nya** (berdasarkan kolom proxy label `is_declining`). 
-* Ini menghasilkan tingkat **Precision mencapai ~94.1%**. 
+## The Results
+The outcome of this Baseline Rule is highly satisfying:
+* Out of approximately 30,000 rows of data, this manual rule successfully filtered and selected exactly **17 critical pages** that need a content refresh.
+* **High Precision:** Out of the 17 flagged pages, **16 of them are proven to be actively declining in traffic** (based on the `is_declining` proxy label).
+* This results in a **Precision@17 of ~94.1%**.
 
-Menebak dengan akurasi 94% hanya bermodalkan aturan statis (If-Else) membuktikan bahwa logika bisnis kita sudah tepat dan sinyal yang dipilih sangat kuat. Angka inilah yang akan menjadi **Batas Standar (Baseline)** yang wajib dikalahkan oleh algoritma *Machine Learning* kita di minggu-minggu berikutnya.
+Achieving 94% precision using only a static rule (If-Else) proves that our business logic is correct and the chosen signals are extremely strong. This exact metric will serve as the **Baseline** that our future Machine Learning algorithms must beat in the upcoming weeks.

@@ -33,44 +33,157 @@
 
     <!-- Main Content Container -->
     <main class="content-wrapper">
-        <section class="max-w-4xl mx-auto p-6 pt-12 fade-in">
-            <div class="glass-card p-12 md:p-16 mb-12">
-                <div class="flex flex-col md:flex-row gap-12 items-center mb-12">
-                    <div class="w-48 h-48 rounded-full border-2 border-accent overflow-hidden flex items-center justify-center bg-[#020c1b]">
-                        <span class="text-gray-500 font-mono text-xs text-center">[ Headshot Here ]</span>
+        <section class="max-w-5xl mx-auto p-6 pt-12 fade-in">
+            <div class="glass-card p-10 md:p-16 mb-12">
+                <!-- Header / Bio -->
+                <div class="flex flex-col md:flex-row gap-12 items-center mb-16 border-b border-gray-700 pb-12">
+                    <div class="w-56 h-56 rounded-full border-2 border-accent overflow-hidden shadow-[0_0_20px_rgba(100,255,218,0.3)]">
+                        <img src="assets/headshot.png" alt="Michael Angello" class="w-full h-full object-cover">
                     </div>
-                    <div>
-                        <h1 class="text-4xl font-bold mb-4 accent">About Me</h1>
+                    <div class="flex-1">
+                        <h1 class="text-4xl md:text-5xl font-bold mb-4 accent">Michael Angello Q.R.</h1>
                         <p class="text-lg text-gray-300 leading-relaxed mb-4">
-                            I'm Michael Angello, a 7th-semester IT student and AI researcher specializing in Federated Learning and Computer Vision. I build systems that solve real problems securely and efficiently.
+                            S1 IT Student (Semester 7) at Telkom University Surabaya | GPA: 3.98/4.00
+                        </p>
+                        <p class="text-md text-gray-400 leading-relaxed">
+                            Focusing on Machine Learning, Federated Learning, and Blockchain. I specialize in building predictive models, computer vision systems, and privacy-preserving AI architectures. Winner of LIDM 2025 and Samsung Innovation Campus AI & IoT Top 5.
                         </p>
                     </div>
                 </div>
 
-                <div class="mb-12">
-                    <h2 class="text-2xl font-bold text-white mb-6 border-b border-gray-700 pb-2">Academic Background & Publications</h2>
-                    <ul class="list-disc list-inside text-gray-300 space-y-3">
-                        <li>Scopus Q2-Q4 indexed publications in Federated Learning (Links pending).</li>
-                        <li>Active AI Researcher at my university.</li>
-                        <li>Winner of LIDM 2025 (2nd Place) for AKSARA Learning.</li>
+                <!-- Experience Section -->
+                <div class="mb-16">
+                    <h2 class="text-2xl font-bold text-white mb-8 border-l-4 border-accent pl-4">Work Experience</h2>
+                    
+                    <div class="mb-6">
+                        <div class="flex justify-between items-baseline flex-wrap gap-2 mb-2">
+                            <h3 class="text-xl font-bold text-gray-200">Junior Data Scientist</h3>
+                            <span class="text-accent font-mono text-sm">Feb 2025 – Jun 2025</span>
+                        </div>
+                        <p class="text-gray-400 font-bold mb-2">PT Inovasi Cipta Lentera</p>
+                        <ul class="list-disc list-inside text-gray-400 space-y-2 ml-2">
+                            <li>Developed predictive ML models to support data-driven decision making.</li>
+                            <li>Conducted EDA and evaluated model performance for business insights.</li>
+                        </ul>
+                    </div>
+
+                    <div class="mb-6">
+                        <div class="flex justify-between items-baseline flex-wrap gap-2 mb-2">
+                            <h3 class="text-xl font-bold text-gray-200">Frontend Web Developer</h3>
+                            <span class="text-accent font-mono text-sm">Jan 2025 – Jun 2025</span>
+                        </div>
+                        <p class="text-gray-400 font-bold mb-2">PT Bima Digital Indonesia</p>
+                        <ul class="list-disc list-inside text-gray-400 space-y-2 ml-2">
+                            <li>Built responsive company profiles using Next.js and Tailwind CSS.</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between items-baseline flex-wrap gap-2 mb-2">
+                            <h3 class="text-xl font-bold text-gray-200">Laboratory Assistant</h3>
+                            <span class="text-accent font-mono text-sm">2025</span>
+                        </div>
+                        <p class="text-gray-400 font-bold mb-2">Telkom University Surabaya</p>
+                        <ul class="list-disc list-inside text-gray-400 space-y-2 ml-2">
+                            <li>Statistics and Data Analysis (Mar - Jun)</li>
+                            <li>Algorithms and Programming (Feb - Jun)</li>
+                            <li>Artificial Intelligence Basics (Feb - Jun)</li>
+                            <li>Data Structures (Aug - Dec)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Publications Section -->
+                <div class="mb-16">
+                    <h2 class="text-2xl font-bold text-white mb-8 border-l-4 border-accent pl-4">Selected Publications</h2>
+                    <ul class="space-y-4 text-gray-300">
+                        <li>
+                            <span class="text-accent font-bold">[Scopus Q2]</span> 
+                            <a href="https://www.scopus.com/pages/publications/105030125449" target="_blank" class="hover:text-white transition-colors underline decoration-gray-600">Optimization of dendritic neuron model framework through activation pairing for multidomain medical diagnosis</a>
+                        </li>
+                        <li>
+                            <span class="text-accent font-bold">[Scopus Q3]</span> 
+                            <a href="https://www.scopus.com/pages/publications/105032207670" target="_blank" class="hover:text-white transition-colors underline decoration-gray-600">A Comparative Evaluation of Federated Learning Algorithms for Privacy-Preserving Academic Prediction</a>
+                        </li>
+                        <li>
+                            <span class="text-accent font-bold">[Scopus Q4]</span> 
+                            <a href="https://www.scopus.com/pages/publications/105040258743" target="_blank" class="hover:text-white transition-colors underline decoration-gray-600">Blockchain-Enabled Explainable AI Framework for Trusted Diabetes Risk Prediction</a>
+                        </li>
+                        <li>
+                            <span class="text-green-400 font-bold">[SINTA 2]</span> 
+                            <a href="https://jiki.cs.ui.ac.id/index.php/jiki/article/view/1687" target="_blank" class="hover:text-white transition-colors underline decoration-gray-600">Federated Learning for Privacy-Preserving IoT Intrusion Detection</a>
+                        </li>
                     </ul>
                 </div>
 
-                <div class="mb-12">
-                    <h2 class="text-2xl font-bold text-white mb-6 border-b border-gray-700 pb-2">Skills & Tech Stack</h2>
-                    <div class="flex flex-wrap gap-3">
-                        <span class="px-4 py-2 rounded-full border border-accent text-accent bg-accent/10 font-mono text-sm">PyTorch</span>
-                        <span class="px-4 py-2 rounded-full border border-accent text-accent bg-accent/10 font-mono text-sm">TensorFlow</span>
-                        <span class="px-4 py-2 rounded-full border border-accent text-accent bg-accent/10 font-mono text-sm">OpenCV</span>
-                        <span class="px-4 py-2 rounded-full border border-accent text-accent bg-accent/10 font-mono text-sm">YOLOv8</span>
-                        <span class="px-4 py-2 rounded-full border border-gray-500 text-gray-300 bg-gray-800 font-mono text-sm">FastAPI</span>
-                        <span class="px-4 py-2 rounded-full border border-gray-500 text-gray-300 bg-gray-800 font-mono text-sm">Next.js</span>
-                        <span class="px-4 py-2 rounded-full border border-gray-500 text-gray-300 bg-gray-800 font-mono text-sm">Node.js</span>
-                        <span class="px-4 py-2 rounded-full border border-gray-500 text-gray-300 bg-gray-800 font-mono text-sm">Python</span>
+                <!-- Skills Section -->
+                <div class="mb-16">
+                    <h2 class="text-2xl font-bold text-white mb-8 border-l-4 border-accent pl-4">Skills & Tools</h2>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="text-gray-400 font-mono mb-3 uppercase tracking-wider text-sm">Languages</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 rounded-full border border-accent/50 text-accent bg-accent/10 text-sm">Python</span>
+                                <span class="px-3 py-1 rounded-full border border-accent/50 text-accent bg-accent/10 text-sm">JavaScript</span>
+                                <span class="px-3 py-1 rounded-full border border-accent/50 text-accent bg-accent/10 text-sm">Solidity</span>
+                                <span class="px-3 py-1 rounded-full border border-accent/50 text-accent bg-accent/10 text-sm">C++ / Go</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-gray-400 font-mono mb-3 uppercase tracking-wider text-sm">Machine Learning & Data</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 rounded-full border border-blue-500/50 text-blue-400 bg-blue-500/10 text-sm">PyTorch</span>
+                                <span class="px-3 py-1 rounded-full border border-blue-500/50 text-blue-400 bg-blue-500/10 text-sm">TensorFlow</span>
+                                <span class="px-3 py-1 rounded-full border border-blue-500/50 text-blue-400 bg-blue-500/10 text-sm">Scikit-learn</span>
+                                <span class="px-3 py-1 rounded-full border border-blue-500/50 text-blue-400 bg-blue-500/10 text-sm">OpenCV</span>
+                                <span class="px-3 py-1 rounded-full border border-blue-500/50 text-blue-400 bg-blue-500/10 text-sm">Pandas</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-gray-400 font-mono mb-3 uppercase tracking-wider text-sm">Web & Cloud</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 rounded-full border border-purple-500/50 text-purple-400 bg-purple-500/10 text-sm">Next.js</span>
+                                <span class="px-3 py-1 rounded-full border border-purple-500/50 text-purple-400 bg-purple-500/10 text-sm">Node.js</span>
+                                <span class="px-3 py-1 rounded-full border border-purple-500/50 text-purple-400 bg-purple-500/10 text-sm">Tailwind CSS</span>
+                                <span class="px-3 py-1 rounded-full border border-purple-500/50 text-purple-400 bg-purple-500/10 text-sm">AWS / Azure</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-gray-400 font-mono mb-3 uppercase tracking-wider text-sm">Certifications</h4>
+                            <ul class="list-disc list-inside text-gray-300 text-sm space-y-1">
+                                <li>Oracle OCI 2025 Data Science & AI Foundations</li>
+                                <li>Microsoft Azure AI Fundamentals (AI-900)</li>
+                                <li>Alibaba Cloud Certified Developer</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
+
+                <!-- Awards Section -->
+                <div>
+                    <h2 class="text-2xl font-bold text-white mb-6 border-l-4 border-accent pl-4">Key Awards</h2>
+                    <ul class="list-none space-y-3 text-gray-300">
+                        <li class="flex items-start">
+                            <span class="text-accent mr-3 mt-1">🏆</span>
+                            <span><strong>1st Place</strong> - National Essay Competition (NEC), Hasanuddin Univ, 2026</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-accent mr-3 mt-1">🏆</span>
+                            <span><strong>2nd Place</strong> - National Student Digital Innovation Competition (LIDM), 2025</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-accent mr-3 mt-1">⭐</span>
+                            <span><strong>Top 5</strong> - Samsung Innovation Campus AI & IoT Program, 2024</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-accent mr-3 mt-1">🏆</span>
+                            <span><strong>2nd Place</strong> - Hackathon ExplorAItion Batch 5 (KOMDIGI), 2026</span>
+                        </li>
+                    </ul>
+                </div>
                 
-                <div class="text-center mt-12">
+                <div class="text-center mt-16 pt-8 border-t border-gray-700">
                     <a href="contact.html" class="magnetic-btn">Let's Discuss AI Architecture</a>
                 </div>
             </div>

@@ -36,26 +36,47 @@
         <section class="max-w-6xl mx-auto p-6 pt-12 fade-in">
             <h1 class="text-4xl md:text-5xl font-bold mb-16 accent text-center">Case Studies</h1>
 
+            <!-- Case Study 1: AI CCTV Tracking -->
+            <div class="glass-card p-8 md:p-12 mb-12 fade-in">
+                <h2 class="text-3xl font-bold text-white mb-6">AI-Based CCTV Workforce Tracking</h2>
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div class="order-2 md:order-1 flex items-center justify-center rounded-lg overflow-hidden border border-gray-700">
+                        <img src="assets/hero_texture_accepted.png" alt="AI CCTV Tracking" class="w-full h-auto object-cover interactive hover:scale-[1.05] transition-transform duration-500">
+                    </div>
+                    <div class="order-1 md:order-2">
+                        <p class="mb-4 text-gray-300">
+                            <strong class="text-white">Client:</strong> PT Ajinomoto Indonesia
+                        </p>
+                        <p class="mb-4 text-gray-300">
+                            <strong class="text-white">The Problem:</strong> The client needed a reliable, non-intrusive way to monitor exact positions and activities of factory workers across specific operational zones, 24/7.
+                        </p>
+                        <p class="mb-4 text-gray-300">
+                            <strong class="text-white">What I Did:</strong> Engineered a custom computer vision pipeline using YOLOv8 for person detection and EasyOCR to dynamically read jersey numbers. Built a high-performance multi-threaded backend using FastAPI and WebSockets.
+                        </p>
+                        <p class="text-accent font-bold">
+                            The Outcome: Stable 24/7 video stream processing with zero memory bottlenecks, providing real-time worker tracking across virtual work zones.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
             <!-- Case Study 2: PRISMA -->
             <div class="glass-card p-8 md:p-12 mb-12 fade-in">
                 <h2 class="text-3xl font-bold text-white mb-6">PRISMA (Federated Learning Major Recommendation)</h2>
-                <div class="grid md:grid-cols-2 gap-8">
+                <div class="grid md:grid-cols-2 gap-8 items-center">
                     <div>
                         <p class="mb-4 text-gray-300">
-                            <strong class="text-white">The Problem:</strong> Training a machine learning model to recommend university majors requires vast amounts of student academic data, which creates significant privacy and data-sharing risks.
+                            <strong class="text-white">The Problem:</strong> Training an ML model to recommend university majors requires vast amounts of student academic data, creating significant privacy risks.
                         </p>
                         <p class="mb-4 text-gray-300">
-                            <strong class="text-white">What I Did & Decided:</strong> Architected a privacy-preserving recommendation engine using Federated Learning. Used Node.js and Next.js for the platform and implemented a Federated Averaging algorithm with Neural Networks. This allowed the model to train decentrally on local student data without ever transferring raw personal data to the central server.
+                            <strong class="text-white">What I Did & Decided:</strong> Architected a privacy-preserving recommendation engine using Federated Learning. Implemented a Federated Averaging algorithm with Neural Networks via Node.js and Next.js, allowing the model to train decentrally.
                         </p>
                         <p class="text-accent font-bold">
                             The Outcome: Successfully demonstrated a secure, scalable way to provide data-driven major recommendations while mathematically guaranteeing user privacy.
                         </p>
                     </div>
-                    <div class="flex items-center justify-center bg-[#020c1b] rounded-lg border border-gray-700 p-8">
-                        <div class="text-gray-500 font-mono text-center">
-                            [ FL Architecture Diagram / PRISMA Dashboard ]<br><br>
-                            <span class="text-sm">Real screenshot to be inserted here</span>
-                        </div>
+                    <div class="flex items-center justify-center rounded-lg overflow-hidden border border-gray-700">
+                        <img src="assets/prisma_dash.png" alt="PRISMA Dashboard UI" class="w-full h-auto object-cover interactive hover:scale-[1.05] transition-transform duration-500">
                     </div>
                 </div>
             </div>
@@ -63,22 +84,22 @@
             <!-- Case Study 3: AKSARA -->
             <div class="glass-card p-8 md:p-12 mb-12 fade-in">
                 <h2 class="text-3xl font-bold text-white mb-6">AKSARA Learning (AI for Dyslexia)</h2>
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div class="order-2 md:order-1 flex items-center justify-center bg-[#020c1b] rounded-lg border border-gray-700 p-8">
-                        <div class="text-gray-500 font-mono text-center">
-                            [ AKSARA Web Interface ]<br><br>
-                            <span class="text-sm">Real screenshot to be inserted here</span>
-                        </div>
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div class="order-2 md:order-1 flex items-center justify-center rounded-lg overflow-hidden border border-gray-700">
+                        <img src="assets/aksara_web.png" alt="AKSARA Learning UI" class="w-full h-auto object-cover interactive hover:scale-[1.05] transition-transform duration-500">
                     </div>
                     <div class="order-1 md:order-2">
                         <p class="mb-4 text-gray-300">
-                            <strong class="text-white">The Problem:</strong> Students with dyslexia struggle in traditional classroom environments because standard text-based materials lack the multisensory engagement they need to process information effectively.
+                            <strong class="text-white">News Coverage:</strong> <a href="https://harian.disway.id/read/919547/ciptakan-platform-belajar-berbasis-ai-untuk-anak-disleksia-telkom-university-surabaya-raih-juara-2-lidm-2025/15" target="_blank" class="text-accent underline">Harian Disway</a>
                         </p>
                         <p class="mb-4 text-gray-300">
-                            <strong class="text-white">What I Did & Decided:</strong> Developed a web-based inclusive learning platform that adapts to the student. Integrated Text-to-Speech (TTS), Speech-to-Text (STT), and OCR models directly into the workflow to turn static text into interactive, multisensory lessons.
+                            <strong class="text-white">The Problem:</strong> Students with dyslexia struggle because standard text-based materials lack multisensory engagement.
+                        </p>
+                        <p class="mb-4 text-gray-300">
+                            <strong class="text-white">What I Did & Decided:</strong> Developed an inclusive web platform integrating Text-to-Speech (TTS), Speech-to-Text (STT), and OCR models to turn static text into interactive lessons.
                         </p>
                         <p class="text-accent font-bold">
-                            The Outcome: The platform was successfully field-tested and implemented in special needs schools (SLB Bina Mandiri). Won 2nd Place at the National Student Digital Innovation Competition (LIDM 2025).
+                            The Outcome: Field-tested in special needs schools (SLB Bina Mandiri) and won 2nd Place at the National Student Digital Innovation Competition (LIDM 2025).
                         </p>
                     </div>
                 </div>
@@ -86,24 +107,21 @@
 
             <!-- Case Study 4: FlyRank -->
             <div class="glass-card p-8 md:p-12 mb-20 fade-in">
-                <h2 class="text-3xl font-bold text-white mb-6">FlyRank.AI (Search Intelligence)</h2>
-                <div class="grid md:grid-cols-2 gap-8">
+                <h2 class="text-3xl font-bold text-white mb-6">FlyRank.AI (Search Intelligence ML Pipeline)</h2>
+                <div class="grid md:grid-cols-2 gap-8 items-center">
                     <div>
                         <p class="mb-4 text-gray-300">
-                            <strong class="text-white">The Problem:</strong> As a machine learning intern, I needed to evaluate how varying dataset features impact predictive accuracy for search intelligence rankings.
+                            <strong class="text-white">The Problem:</strong> Evaluating how varying dataset features impact predictive accuracy for search intelligence rankings.
                         </p>
                         <p class="mb-4 text-gray-300">
-                            <strong class="text-white">What I Did & Decided:</strong> Framed the research question, ran extensive baseline experiments using decision tree classifiers, and established a reproducible ML pipeline to evaluate ranking opportunities.
+                            <strong class="text-white">What I Did & Decided:</strong> Framed the research question, ran baseline experiments using Random Forest classifiers, and established a reproducible ML pipeline to evaluate feature importance.
                         </p>
                         <p class="text-accent font-bold">
-                            The Outcome: Delivered structured ML task framing and validated baseline models that lay the groundwork for advanced ranking algorithms at FlyRank.
+                            The Outcome: Delivered validated baseline models that lay the groundwork for advanced ranking algorithms at FlyRank.
                         </p>
                     </div>
-                    <div class="flex items-center justify-center bg-[#020c1b] rounded-lg border border-gray-700 p-8">
-                        <div class="text-gray-500 font-mono text-center">
-                            [ ML Pipeline / EDA Output ]<br><br>
-                            <span class="text-sm">Real screenshot to be inserted here</span>
-                        </div>
+                    <div class="flex items-center justify-center rounded-lg overflow-hidden border border-gray-700">
+                        <img src="assets/flyrank_ml.png" alt="Machine Learning Pipeline Graph" class="w-full h-auto object-cover interactive hover:scale-[1.05] transition-transform duration-500">
                     </div>
                 </div>
             </div>

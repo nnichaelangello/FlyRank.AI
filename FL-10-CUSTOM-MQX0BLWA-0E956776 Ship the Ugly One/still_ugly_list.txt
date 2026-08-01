@@ -1,0 +1,9 @@
+Still Ugly List (FL-10):
+
+1. Images & Screenshots: The placeholder text / generic textures for AKSARA Learning and PRISMA look bare. I need to take real, high-res screenshots of those dashboards and replace them.
+2. Responsiveness on very small screens: While the grid works on mobile, the GSAP glass-cards can feel a bit cramped on phones with very small widths. 
+3. Headshot: The "Headshot Here" circle on the About page is an obvious placeholder. I need a real professional photo.
+4. Publication Links: The Scopus links are currently pending and not clickable.
+5. No Backend: The "Let's Discuss" buttons just use mailto: links instead of a functional contact form backend, which might look a bit simple.
+
+I shipped it anyway because an ugly, live portfolio beats a perfect, private one!

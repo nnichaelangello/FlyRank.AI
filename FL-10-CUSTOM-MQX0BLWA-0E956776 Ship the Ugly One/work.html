@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work | Michael Angello</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- GSAP for animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+    <!-- Background Layers -->
+    <div class="bg-animated"></div>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="noise"></div>
+    <canvas id="particles"></canvas>
+    <div class="spotlight" id="spotlight" style="--x: 50%; --y: 50%;"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="work.html" class="active">Work</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-follower" id="cursor"></div>
+
+    <!-- Main Content Container -->
+    <main class="content-wrapper">
+        <section class="max-w-6xl mx-auto p-6 pt-12 fade-in">
+            <h1 class="text-4xl md:text-5xl font-bold mb-16 accent text-center">Case Studies</h1>
+
+            <!-- Case Study 2: PRISMA -->
+            <div class="glass-card p-8 md:p-12 mb-12 fade-in">
+                <h2 class="text-3xl font-bold text-white mb-6">PRISMA (Federated Learning Major Recommendation)</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <p class="mb-4 text-gray-300">
+                            <strong class="text-white">The Problem:</strong> Training a machine learning model to recommend university majors requires vast amounts of student academic data, which creates significant privacy and data-sharing risks.
+                        </p>
+                        <p class="mb-4 text-gray-300">
+                            <strong class="text-white">What I Did & Decided:</strong> Architected a privacy-preserving recommendation engine using Federated Learning. Used Node.js and Next.js for the platform and implemented a Federated Averaging algorithm with Neural Networks. This allowed the model to train decentrally on local student data without ever transferring raw personal data to the central server.
+                        </p>
+                        <p class="text-accent font-bold">
+                            The Outcome: Successfully demonstrated a secure, scalable way to provide data-driven major recommendations while mathematically guaranteeing user privacy.
+                        </p>
+                    </div>
+                    <div class="flex items-center justify-center bg-[#020c1b] rounded-lg border border-gray-700 p-8">
+                        <div class="text-gray-500 font-mono text-center">
+                            [ FL Architecture Diagram / PRISMA Dashboard ]<br><br>
+                            <span class="text-sm">Real screenshot to be inserted here</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Case Study 3: AKSARA -->
+            <div class="glass-card p-8 md:p-12 mb-12 fade-in">
+                <h2 class="text-3xl font-bold text-white mb-6">AKSARA Learning (AI for Dyslexia)</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="order-2 md:order-1 flex items-center justify-center bg-[#020c1b] rounded-lg border border-gray-700 p-8">
+                        <div class="text-gray-500 font-mono text-center">
+                            [ AKSARA Web Interface ]<br><br>
+                            <span class="text-sm">Real screenshot to be inserted here</span>
+                        </div>
+                    </div>
+                    <div class="order-1 md:order-2">
+                        <p class="mb-4 text-gray-300">
+                            <strong class="text-white">The Problem:</strong> Students with dyslexia struggle in traditional classroom environments because standard text-based materials lack the multisensory engagement they need to process information effectively.
+                        </p>
+                        <p class="mb-4 text-gray-300">
+                            <strong class="text-white">What I Did & Decided:</strong> Developed a web-based inclusive learning platform that adapts to the student. Integrated Text-to-Speech (TTS), Speech-to-Text (STT), and OCR models directly into the workflow to turn static text into interactive, multisensory lessons.
+                        </p>
+                        <p class="text-accent font-bold">
+                            The Outcome: The platform was successfully field-tested and implemented in special needs schools (SLB Bina Mandiri). Won 2nd Place at the National Student Digital Innovation Competition (LIDM 2025).
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Case Study 4: FlyRank -->
+            <div class="glass-card p-8 md:p-12 mb-20 fade-in">
+                <h2 class="text-3xl font-bold text-white mb-6">FlyRank.AI (Search Intelligence)</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <p class="mb-4 text-gray-300">
+                            <strong class="text-white">The Problem:</strong> As a machine learning intern, I needed to evaluate how varying dataset features impact predictive accuracy for search intelligence rankings.
+                        </p>
+                        <p class="mb-4 text-gray-300">
+                            <strong class="text-white">What I Did & Decided:</strong> Framed the research question, ran extensive baseline experiments using decision tree classifiers, and established a reproducible ML pipeline to evaluate ranking opportunities.
+                        </p>
+                        <p class="text-accent font-bold">
+                            The Outcome: Delivered structured ML task framing and validated baseline models that lay the groundwork for advanced ranking algorithms at FlyRank.
+                        </p>
+                    </div>
+                    <div class="flex items-center justify-center bg-[#020c1b] rounded-lg border border-gray-700 p-8">
+                        <div class="text-gray-500 font-mono text-center">
+                            [ ML Pipeline / EDA Output ]<br><br>
+                            <span class="text-sm">Real screenshot to be inserted here</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mb-32 fade-in">
+                <a href="about.html" class="magnetic-btn">See the Person Behind the Code</a>
+            </div>
+        </section>
+    </main>
+
+    <script src="assets/main.js"></script>
+</body>
+</html>

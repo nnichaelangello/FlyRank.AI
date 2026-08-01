@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Michael Angello</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- GSAP for animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+    <!-- Background Layers -->
+    <div class="bg-animated"></div>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="noise"></div>
+    <canvas id="particles"></canvas>
+    <div class="spotlight" id="spotlight" style="--x: 50%; --y: 50%;"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="work.html">Work</a>
+        <a href="about.html" class="active">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-follower" id="cursor"></div>
+
+    <!-- Main Content Container -->
+    <main class="content-wrapper">
+        <section class="max-w-4xl mx-auto p-6 pt-12 fade-in">
+            <div class="glass-card p-12 md:p-16 mb-12">
+                <div class="flex flex-col md:flex-row gap-12 items-center mb-12">
+                    <div class="w-48 h-48 rounded-full border-2 border-accent overflow-hidden flex items-center justify-center bg-[#020c1b]">
+                        <span class="text-gray-500 font-mono text-xs text-center">[ Headshot Here ]</span>
+                    </div>
+                    <div>
+                        <h1 class="text-4xl font-bold mb-4 accent">About Me</h1>
+                        <p class="text-lg text-gray-300 leading-relaxed mb-4">
+                            I'm Michael Angello, a 7th-semester IT student and AI researcher specializing in Federated Learning and Computer Vision. I build systems that solve real problems securely and efficiently.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mb-12">
+                    <h2 class="text-2xl font-bold text-white mb-6 border-b border-gray-700 pb-2">Academic Background & Publications</h2>
+                    <ul class="list-disc list-inside text-gray-300 space-y-3">
+                        <li>Scopus Q2-Q4 indexed publications in Federated Learning (Links pending).</li>
+                        <li>Active AI Researcher at my university.</li>
+                        <li>Winner of LIDM 2025 (2nd Place) for AKSARA Learning.</li>
+                    </ul>
+                </div>
+
+                <div class="mb-12">
+                    <h2 class="text-2xl font-bold text-white mb-6 border-b border-gray-700 pb-2">Skills & Tech Stack</h2>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-4 py-2 rounded-full border border-accent text-accent bg-accent/10 font-mono text-sm">PyTorch</span>
+                        <span class="px-4 py-2 rounded-full border border-accent text-accent bg-accent/10 font-mono text-sm">TensorFlow</span>
+                        <span class="px-4 py-2 rounded-full border border-accent text-accent bg-accent/10 font-mono text-sm">OpenCV</span>
+                        <span class="px-4 py-2 rounded-full border border-accent text-accent bg-accent/10 font-mono text-sm">YOLOv8</span>
+                        <span class="px-4 py-2 rounded-full border border-gray-500 text-gray-300 bg-gray-800 font-mono text-sm">FastAPI</span>
+                        <span class="px-4 py-2 rounded-full border border-gray-500 text-gray-300 bg-gray-800 font-mono text-sm">Next.js</span>
+                        <span class="px-4 py-2 rounded-full border border-gray-500 text-gray-300 bg-gray-800 font-mono text-sm">Node.js</span>
+                        <span class="px-4 py-2 rounded-full border border-gray-500 text-gray-300 bg-gray-800 font-mono text-sm">Python</span>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-12">
+                    <a href="contact.html" class="magnetic-btn">Let's Discuss AI Architecture</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="assets/main.js"></script>
+</body>
+</html>

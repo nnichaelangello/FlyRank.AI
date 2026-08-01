@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Michael Angello</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- GSAP for animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+    <!-- Background Layers -->
+    <div class="bg-animated"></div>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="noise"></div>
+    <canvas id="particles"></canvas>
+    <div class="spotlight" id="spotlight" style="--x: 50%; --y: 50%;"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="work.html">Work</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" class="active">Contact</a>
+    </nav>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-follower" id="cursor"></div>
+
+    <!-- Main Content Container -->
+    <main class="content-wrapper flex items-center justify-center min-h-[90vh]">
+        <section class="max-w-2xl w-full p-6 fade-in text-center">
+            <div class="glass-card p-12 md:p-16">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6 accent">Let's Build It</h1>
+                
+                <p class="text-xl text-gray-300 leading-relaxed mb-12">
+                    Looking for someone to architect your next AI system? I am available to discuss technical interviews, engineering roles, and innovative ML projects with Tech Leads and Technical Recruiters.
+                </p>
+
+                <div class="flex flex-col gap-6 items-center">
+                    <a href="mailto:michaelriyadi5@gmail.com" class="magnetic-btn w-full md:w-auto text-center">
+                        Email me to schedule a technical interview
+                    </a>
+                    
+                    <div class="flex gap-8 mt-6">
+                        <a href="https://linkedin.com" target="_blank" class="text-gray-400 hover:text-accent font-mono text-lg transition-colors interactive">LinkedIn</a>
+                        <a href="https://github.com" target="_blank" class="text-gray-400 hover:text-accent font-mono text-lg transition-colors interactive">GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="assets/main.js"></script>
+</body>
+</html>

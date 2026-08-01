@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Michael Angello | AI & ML Engineer</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- GSAP for animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+    <!-- Background Layers -->
+    <div class="bg-animated"></div>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="noise"></div>
+    <canvas id="particles"></canvas>
+    <div class="spotlight" id="spotlight" style="--x: 50%; --y: 50%;"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html" class="active">Home</a>
+        <a href="work.html">Work</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-follower" id="cursor"></div>
+
+    <!-- Main Content Container -->
+    <main class="content-wrapper">
+        
+        <!-- Hero Section -->
+        <section class="min-h-[80vh] flex items-center justify-center p-6 text-center">
+            <div class="glass-card p-12 md:p-16 max-w-4xl relative overflow-hidden">
+                <div class="reveal-text mb-6">
+                    <h1 class="reveal-inner text-6xl md:text-8xl font-bold accent tracking-tighter interactive">&lt; MA /&gt;</h1>
+                </div>
+                
+                <div class="reveal-text mb-6">
+                    <h2 class="reveal-inner text-3xl md:text-5xl font-bold text-white interactive">Michael Angello</h2>
+                </div>
+                
+                <div class="reveal-text mb-10">
+                    <p class="reveal-inner text-lg md:text-xl max-w-2xl mx-auto leading-relaxed text-gray-300">
+                        I can architect, train, and deploy production-ready Artificial Intelligence and Federated Learning systems.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Case Study -->
+        <section class="max-w-6xl mx-auto p-6 fade-in mb-24">
+            <h3 class="text-3xl font-bold mb-8 accent uppercase tracking-wide">Featured Case Study</h3>
+            <div class="glass-card p-8 md:p-12 flex flex-col md:flex-row gap-12 items-center">
+                <div class="w-full md:w-1/2">
+                    <img src="assets/hero_texture_accepted.png" alt="AI CCTV Tracking Texture" class="rounded-xl border border-gray-600 shadow-lg interactive hover:scale-[1.02] transition-transform duration-300">
+                </div>
+                <div class="w-full md:w-1/2">
+                    <h4 class="text-2xl font-bold text-white mb-4">AI-Based CCTV Workforce Tracking</h4>
+                    <p class="mb-4 text-gray-300 leading-relaxed">
+                        <strong class="text-white">The Problem:</strong> PT Ajinomoto Indonesia needed a reliable, non-intrusive way to monitor exact positions and activities of factory workers across specific operational zones, 24/7, without relying on manual check-ins.
+                    </p>
+                    <p class="mb-6 text-gray-300 leading-relaxed">
+                        <strong class="text-white">What I Did:</strong> Engineered a custom computer vision pipeline using YOLOv8 for person detection and EasyOCR to dynamically read jersey numbers. Built a high-performance multi-threaded backend in Python using FastAPI and WebSockets.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Bio & CTA -->
+        <section class="max-w-4xl mx-auto p-6 text-center fade-in mb-32">
+            <div class="glass-card p-12">
+                <p class="text-xl mb-8 text-gray-300">
+                    I'm a 7th-semester IT student and AI researcher specializing in Federated Learning and Computer Vision.
+                </p>
+                <a href="work.html" class="magnetic-btn">Explore My Federated Learning Cases</a>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="assets/main.js"></script>
+</body>
+</html>

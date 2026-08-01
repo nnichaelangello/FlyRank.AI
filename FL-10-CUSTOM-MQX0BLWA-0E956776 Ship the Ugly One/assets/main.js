@@ -57,36 +57,25 @@ magBtns.forEach(btn => {
 
 // --- 3. Page Entrance Animations ---
 if (document.querySelector('.reveal-inner')) {
-    gsap.to('.reveal-inner', {
-        y: "0%",
-        duration: 1.2,
-        stagger: 0.15,
-        ease: "power4.out",
-        delay: 0.3
-    });
+    gsap.fromTo('.reveal-inner', 
+        { y: "110%" },
+        { y: "0%", duration: 1.2, stagger: 0.15, ease: "power4.out", delay: 0.3 }
+    );
 }
 
 if (document.querySelector('.glass-card')) {
-    gsap.from('.glass-card', {
-        scale: 0.95,
-        opacity: 0,
-        y: 20,
-        duration: 1.5,
-        ease: "power3.out",
-        delay: 0.1
-    });
+    gsap.fromTo('.glass-card', 
+        { scale: 0.95, opacity: 0, y: 20 },
+        { scale: 1, opacity: 1, y: 0, duration: 1.5, ease: "power3.out", delay: 0.1 }
+    );
 }
 
 // Fade in normal content sections
 if (document.querySelector('.fade-in')) {
-    gsap.from('.fade-in', {
-        opacity: 0,
-        y: 30,
-        duration: 1,
-        stagger: 0.2,
-        ease: "power2.out",
-        delay: 0.5
-    });
+    gsap.fromTo('.fade-in', 
+        { opacity: 0, y: 30 },
+        { opacity: 1, y: 0, duration: 1, stagger: 0.2, ease: "power2.out", delay: 0.5 }
+    );
 }
 
 // --- 4. Interactive Particle Background ---

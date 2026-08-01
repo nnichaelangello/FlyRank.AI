@@ -78,5 +78,3 @@ if __name__ == "__main__":
             github_status = search_github(paper['title'])
             print(f"   Code Availability: {github_status}")
             print(f"   Methodology Summary: {paper['summary'][:200]}...")
-            
-    print("\n[ Note for FL-07 Submission: To record the screen capture, simply run `python research_scout.py` and record your terminal! ]")

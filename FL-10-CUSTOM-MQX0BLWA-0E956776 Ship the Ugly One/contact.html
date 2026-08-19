@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +10,31 @@
     <!-- GSAP for animations -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <link rel="stylesheet" href="assets/style.css">
+
+    <!-- Basic SEO & Meta -->
+    <meta name="description"
+        content="Portfolio of Michael Angello, an AI Researcher & ML Engineer specializing in Federated Learning and Computer Vision.">
+    <meta name="author" content="Michael Angello">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- OpenGraph / Social Share Preview -->
+    <meta property="og:title" content="Michael Angello | AI & ML Engineer">
+    <meta property="og:description"
+        content="I architect, train, and deploy production-ready AI and Federated Learning systems.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ship-the-ugly-one-lovat.vercel.app/">
+    <meta property="og:image" content="https://ship-the-ugly-one-lovat.vercel.app/assets/hero_texture_accepted.png">
+
+    <!-- Google Analytics (Dummy) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
 </head>
+
 <body>
 
     <!-- Background Layers -->
@@ -36,25 +61,60 @@
         <section class="max-w-2xl w-full p-6 fade-in text-center">
             <div class="glass-card p-12 md:p-16">
                 <h1 class="text-4xl md:text-5xl font-bold mb-6 accent">Let's Build It</h1>
-                
+
                 <p class="text-xl text-gray-300 leading-relaxed mb-12">
-                    Looking for someone to architect your next AI system? I am available to discuss technical interviews, engineering roles, and innovative ML projects with Tech Leads and Technical Recruiters.
+                    Looking for someone to architect your next AI system? I am available to discuss technical
+                    interviews, engineering roles, and innovative ML projects with Tech Leads and Technical Recruiters.
                 </p>
 
                 <div class="flex flex-col gap-6 items-center">
-                    <a href="mailto:michaelriyadi5@gmail.com" class="magnetic-btn w-full md:w-auto text-center">
-                        Email me to schedule a technical interview
-                    </a>
-                    
+
+                    <form action="https://formspree.io/f/maewajlw" method="POST"
+                        class="flex flex-col gap-6 w-full max-w-md mx-auto text-left">
+                        <div>
+                            <label for="name" class="block text-gray-400 mb-2 font-mono text-sm">Name</label>
+                            <input type="text" id="name" name="name" required
+                                class="w-full bg-black/50 border border-gray-700 rounded-lg p-3 text-white focus:border-accent outline-none transition-colors">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-gray-400 mb-2 font-mono text-sm">Email</label>
+                            <input type="email" id="email" name="email" required
+                                class="w-full bg-black/50 border border-gray-700 rounded-lg p-3 text-white focus:border-accent outline-none transition-colors">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-gray-400 mb-2 font-mono text-sm">Message</label>
+                            <textarea id="message" name="message" rows="4" required
+                                class="w-full bg-black/50 border border-gray-700 rounded-lg p-3 text-white focus:border-accent outline-none transition-colors resize-none"></textarea>
+                        </div>
+                        <button type="submit" class="magnetic-btn w-full text-center mt-4">Send Message</button>
+                    </form>
+
+
                     <div class="flex gap-8 mt-6">
-                        <a href="https://linkedin.com" target="_blank" class="text-gray-400 hover:text-accent font-mono text-lg transition-colors interactive">LinkedIn</a>
-                        <a href="https://github.com" target="_blank" class="text-gray-400 hover:text-accent font-mono text-lg transition-colors interactive">GitHub</a>
+                        <a href="https://linkedin.com" target="_blank"
+                            class="text-gray-400 hover:text-accent font-mono text-lg transition-colors interactive">LinkedIn</a>
+                        <a href="https://github.com" target="_blank"
+                            class="text-gray-400 hover:text-accent font-mono text-lg transition-colors interactive">GitHub</a>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
+
+    <!-- FlyRank Graduate Badge Footer -->
+    <footer class="mt-20 py-8 border-t border-gray-800 text-center fade-in">
+        <a href="https://aifluency.flyrank.ai" target="_blank"
+            class="inline-block interactive hover:scale-105 transition-transform">
+            <div class="glass-card px-6 py-3 flex items-center gap-3">
+                <span class="text-accent font-bold">FlyRank.AI</span>
+                <span class="text-gray-400">|</span>
+                <span class="text-white text-sm tracking-widest uppercase">Verified Graduate</span>
+            </div>
+        </a>
+    </footer>
+
     <script src="assets/main.js"></script>
 </body>
+
 </html>

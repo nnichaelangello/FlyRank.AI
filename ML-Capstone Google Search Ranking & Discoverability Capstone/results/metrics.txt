@@ -1,0 +1,4 @@
+Baseline Precision: 99.40%
+ML Precision: 98.07%
+ML Precision@50: 100.00%
+McNemar p-value: 5.7478e-11

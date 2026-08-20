@@ -1,0 +1,4 @@
+We are hiring a Machine Learning Engineer.
+The ideal candidate must have strong experience with Python, Data Science, Pandas, and Scikit-learn.
+Experience with Natural Language Processing (NLP), HuggingFace, and Large Language Models (LLMs) is a huge plus.
+Must be able to deploy models and write clean, maintainable code.

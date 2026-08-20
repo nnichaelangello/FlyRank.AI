@@ -1,0 +1,26 @@
+FlyRank Internship — Pseudonymized Warehouse Release (v20260703)
+The open-ended, warehouse-shaped dataset (~81.8M rows; daily fact 78,835,655 rows) for advanced capstone work. Star schema with salted, namespaced, fingerprinted hash keys. Built from warehouse v2 full history (frozen snapshot, export date 2026-07-03): an unbalanced panel — per-client history depth differs; see dim_clients.gsc_data_start / ga4_data_start.
+
+Table	Rows	Grain
+dim_clients	104	one row per pseudonymized client
+dim_content	519,606	one row per pseudonymized content item
+fact_content_daily_performance	78,835,655	one row per report date, pseudonymized client, and pseudonymized content item
+fact_content_query_90d	2,414,248	one row per pseudonymized client, content item, and query hash over the fixed 90-day window
+fact_content_daily_performance is partitioned by month=YYYY-MM. The _sample file is the latest full month — start there.
+
+fact_content_query_90d is query-level: salted query hashes over a fixed 90-day window with last-30/prev-30 sub-windows; the rare tail (< 10 impressions) and Google-anonymized impressions are preserved as per-content aggregate shares.
+
+Load
+from datasets import load_dataset
+ds = load_dataset("FlyRank/internship-warehouse", "fact_content_daily_performance", streaming=True, split="train")
+
+Or DuckDB (works in Colab; no full download needed):
+
+import duckdb
+con = duckdb.connect()
+con.execute("CREATE SECRET (TYPE huggingface, TOKEN 'hf_your_read_token')")  # accept the gate in-browser first, then paste a READ token
+rel = "hf://datasets/FlyRank/internship-warehouse"
+con.sql(f"SELECT COUNT(*) FROM read_parquet('{rel}/fact_content_daily_performance/**/*.parquet')")
+
+Terms
+Anonymized research and education use only. No re-identification attempts, no redistribution, no client-identifying output. Hash keys are salted and namespaced; the salt never ships.

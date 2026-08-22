@@ -1,29 +1,61 @@
-# Demo Video Script (FL-09)
+# 🎬 Video Script: AI Resume Screener & Automation Agent
 
-*Petunjuk: Buka terminal Anda, bersiaplah untuk mengeksekusi `python research_scout.py`. Buka kode `research_scout.py` di editor Anda agar bisa ditunjukkan di layar. Jalankan rekaman (Loom/OBS) dan bacakan naskah di bawah ini dengan suara natural.*
+**Target Duration:** 3 - 5 Minutes
+**Objective:** Fulfill the FL-09 graduation evaluation criteria (End-to-End Live Run, 1 Design Decision, 1 Limitation).
 
 ---
 
-**[0:00 - Intro & The "Why"]**
-"Hi, I'm Michael Angello. Today I'm going to demonstrate my Research Scout Agent, built in Python. The purpose of this agent is to help content strategists and researchers gather raw textual intelligence automatically. Instead of manually Googling a topic and clicking through articles, this agent does it for you and packages the text into a clean JSON file."
+## 🕒 [0:00 - 0:45] Introduction & Problem Context
+**On-Screen Visuals (What to show):** 
+- Open the terminal / Command Prompt (leave it idle for now).
+- Open File Explorer, displaying a folder containing dummy/fake PDF CVs that will be tested.
 
-**[0:20 - Running the Code]**
-"Let's run it live. I have my terminal open, and the current query is set to 'how to train a federated learning model'. I'll type `python research_scout.py` and hit enter."
-*(Tekan enter di terminal)*
-"As you can see, it's querying Google for the top 3 URLs. Now it's visiting each URL, sending an HTTP request, and parsing the HTML."
+**🗣️ Voice Narration (What you should say):**
+> "Hello everyone, my name is Michael. Today I will be demonstrating the AI Agent I built during my FlyRank.AI internship.
+> 
+> The problem I set out to solve is very straightforward: HR teams waste too much time manually reading through hundreds of resumes just to find a few relevant candidates. To solve this, I built an automated *AI Resume Screener*. This agent 'listens' to a specific folder, and whenever a new PDF resume arrives, it instantly reads the content, extracts the text, and measures the candidate's fit against the job criteria using Machine Learning Semantic Search. Let's see it in action!"
 
-**[0:45 - Explaining a Design Decision]**
-*(Buka kode `research_scout.py` di layar, sorot bagian BeautifulSoup)*
-"While it runs, I want to point out a specific design decision here. I chose to use the `BeautifulSoup` library and specifically target paragraph tags `<p>`. This ensures we extract the actual readable body content of the article, filtering out most of the messy navigation bars, footers, and raw HTML tags."
+---
 
-**[1:10 - Showing the Output]**
-*(Buka file `research_results.json` di editor)*
-"The run just finished. It generated this `research_results.json` file. Let's open it. Here we can see the URL it visited, and a massive string of clean text extracted from the page. This is now ready to be fed into an LLM or an NLP pipeline for summarization."
+## 🕒 [0:45 - 2:30] Live End-to-End Run
+**On-Screen Visuals (What to show):** 
+1. In the Terminal, type and execute the command: `python "FL-04 Ship an Automation Workflow v2/automation_watcher.py"` (or wherever your watcher script is located).
+2. Split your screen: Terminal on the left, File Explorer on the right.
+3. Copy a dummy PDF CV file and Paste it into the folder monitored by the bot (e.g., an `Incoming_CVs` folder).
+4. Show the terminal immediately reacting, processing the PDF, and outputting the match score!
 
-**[1:30 - Explaining a Limitation]**
-"However, it's important to be honest about limitations. Because this agent uses the `requests` library, it does not execute JavaScript. If it hits a modern React or Vue application that relies entirely on client-side rendering, or a site heavily protected by Cloudflare, it won't be able to scrape the content. For those edge cases, I would need to upgrade the architecture to use Playwright or Selenium."
+**🗣️ Voice Narration (What you should say):**
+> "Now, I am going to run my *Automation Watcher* script in the background... [press Enter in terminal].
+> Okay, the bot is now active and listening. 
+> 
+> On the right side here is the HR folder. Now, imagine a new applicant submits their resume. I am going to drop this PDF file into the folder... [Paste the PDF file].
+> 
+> [Wait for the terminal to react]... There we go! As you can see in the terminal, my AI agent immediately detected the file. It instantly extracted the PDF text and sent it to the Machine Learning model for scoring. And here are the results! The AI gave a high relevance score because this candidate has Machine Learning experience that perfectly matches the open position. HR can now instantly identify top candidates in a matter of seconds!"
 
-**[1:55 - Outro]**
-"And that's the Research Scout Agent. It's fast, lightweight, and gets the job done for standard web content. The full code and documentation are available on my GitHub. Thanks for watching." 
+---
 
-*(Hentikan Rekaman)*
+## 🕒 [2:30 - 3:30] Design Decision
+**On-Screen Visuals (What to show):** 
+- Open your text editor (VS Code or Cursor), and display the source code of `FL-17-CUSTOM-MQX0Q5QE-6FE1938E The Plan to Keep Building Details\resume_screener.py`
+- Highlight or point your mouse at the line of code that imports `sentence-transformers` or initializes the AI algorithm.
+
+**🗣️ Voice Narration (What you should say):**
+> "So, how does this agent work under the hood? I want to highlight one crucial design decision I made.
+> 
+> Instead of just using basic keyword matching algorithms, I decided to use a *HuggingFace Sentence-Transformers* AI model (as you can see on this line of code). I made this decision because keyword matching is incredibly rigid. If HR is looking for a 'Software Engineer' but the applicant wrote 'Python Developer' on their CV, a legacy system would reject them. But by using *Sentence-Transformers*, my AI understands the **semantic meaning** and context of the words, so relevant applicants are still detected even if they use different synonyms."
+
+---
+
+## 🕒 [3:30 - 4:30] Limitation & Conclusion
+**On-Screen Visuals (What to show):** 
+- Open your FlyRank.AI GitHub Repository or show your face on camera (if using a small webcam bubble in the corner).
+
+**🗣️ Voice Narration (What you should say):**
+> "While this agent massively accelerates the workflow, it does have a limitation that I discovered during testing.
+> 
+> Its biggest limitation right now relates to language and PDF structure. Because the machine learning language model I'm using is predominantly trained on English data, its semantic accuracy will drop significantly if an applicant uploads a resume written in a regional language or a non-standard mixed language format. Furthermore, scanned image PDFs (without an OCR text layer) cannot be read by my current text extractor bot. Addressing these issues will be my primary focus for future work.
+> 
+> That concludes my *AI Resume Screener* demo for FlyRank.AI. This system is now ready to be scaled to the cloud. Thank you for watching!"
+
+---
+*(Stop screen recording)*
